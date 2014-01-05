@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Spry::VERSION
   spec.authors       = ["Nathaniel Wroblewski"]
   spec.email         = ["nathanielwroblewski@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Run performance regression tests for your Rails app}
+  spec.summary       = %q{Spry automates perf tests and graphs the results}
   spec.homepage      = ""
   spec.license       = "MIT"
 
