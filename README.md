@@ -2,6 +2,9 @@
 
 Spry runs your [Rspec](https://relishapp.com/rspec) performance tests and graphs the output using [D3](http://d3js.org/).
 
+## Screen Shot
+![Screen Shot](https://raw.github.com/NathanielWroblewski/spry/master/spry-screenshot.png)
+
 ## Installation
 
 Add this line to your application's Gemfile:
