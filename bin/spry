@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'json'
+
+remote = `git remote -v | grep '^origin.*fetch' | awk '{print $2}'`
+branch = `git branch | grep '*' | awk '{print $2}'`
+
+data = `ruby #{File.dirname(__FILE__)}/../lib/spry.rb #{remote.chomp} #{branch}`
+runtimes = YAML.load(data)
+
+html_path = File.expand_path('../../lib/spry/spry.html', __FILE__)
+d3_path = File.expand_path('../../lib/spry/d3.v3.min.js', __FILE__)
+html_source = File.read(html_path) + '<script>' + File.read(d3_path) +
+  "window._spry=#{runtimes.to_json};plotRuntimes()</script>"
+temp_html = '/tmp/spry.html'
+
+File.open(temp_html, 'w'){ |file| file.write(html_source) }
+`open #{temp_html}`
